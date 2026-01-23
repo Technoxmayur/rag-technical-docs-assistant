@@ -1,31 +1,39 @@
 # RAG-Based AI Assistant for Technical Documentation
 
-## Overview
-This project implements a Retrieval-Augmented Generation (RAG) system that answers user queries by retrieving relevant information from technical documents and generating contextual responses using NLP techniques.
+## Features
+- Retrieval-Augmented Generation (RAG)
+- spaCy + NLTK preprocessing
+- Sentence Transformers embeddings
+- FAISS vector search
+- FastAPI backend
 
-## Tech Stack
-- Python
-- spaCy
-- NLTK
-- Embeddings
-- FastAPI
+## How to Run (VS Code)
 
-## Key Features
-- Document preprocessing and text chunking
-- Semantic retrieval using embeddings
-- Context-aware response generation
-- REST API interface for query handling
+### 1. Extract ZIP
+```bash
+unzip RAG_AI_Assistant.zip
+cd RAG_AI_Assistant
+```
 
-## Current Status
-🚧 Work in progress  
-Basic document processing and retrieval pipeline implemented. Response generation and optimization in progress.
+### 2. Create Virtual Environment
+```bash
+python -m venv venv
+venv\Scripts\activate   # Windows
+```
 
-## Roadmap
-- Improve retrieval accuracy
-- Add vector database integration (FAISS)
-- Enhance prompt design and response quality
-- Extend support for multiple document formats
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+python -m spacy download en_core_web_sm
+```
 
-## Use Case
-Designed to assist developers and engineers in quickly navigating and understanding large technical documentation sets.
+### 4. Run Server
+```bash
+uvicorn main:app --reload
+```
 
+### 5. Test API
+Open browser:
+http://127.0.0.1:8000/docs
+
+Use POST /ask
